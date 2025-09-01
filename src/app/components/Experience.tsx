@@ -43,7 +43,7 @@ export default function Experience() {
               University of Westminster (via Informatics Institute of Technology)
             </h4>
             <p className="text-gray-700">
-              BEng (Hons) Software Engineering — Lower Second Class Honours (2:2)
+              BEng (Hons) Software Engineering — Second Class Honours (2:2)
             </p>
           </div>
         </div>
