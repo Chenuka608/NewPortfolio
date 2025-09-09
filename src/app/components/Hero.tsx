@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { FaArrowDown } from "react-icons/fa"; // react-icons arrow
 
 export default function Hero() {
   const [flipped, setFlipped] = useState(false);
@@ -23,7 +24,7 @@ export default function Hero() {
       <main className="max-w-4xl w-full flex flex-col justify-center px-6 py-12 text-gray-900">
         <header className="mb-10 sm:mb-12">
           <h1 className="text-5xl sm:text-7xl font-extrabold leading-tight mb-4 sm:mb-6 text-black">
-            Chenuka Sarathchandra
+            Chenuka Sarathchandra.
           </h1>
           <p className="text-base sm:text-lg text-gray-900 max-w-xl mb-4 sm:mb-6">
             Software Engineer at Heart | Perfectionist at work
@@ -33,8 +34,9 @@ export default function Hero() {
           </blockquote>
         </header>
 
-        <div className="flex flex-row items-start space-x-6">
-          {/* Get in touch button as a link */}
+        {/* Buttons Row */}
+        <div className="flex flex-row items-center space-x-6">
+          {/* Get in touch button */}
           <a
             href="#contact"
             onMouseEnter={() => setFlipped(true)}
@@ -68,12 +70,16 @@ export default function Hero() {
             </div>
           </a>
 
+          {/* Works button */}
           <a
-            href="#works"
-            className="text-black font-medium hover:underline cursor-pointer text-base sm:text-lg self-center"
-          >
-            Works
-          </a>
+  href="#works"
+  className="flex flex-row items-center font-medium cursor-pointer text-base sm:text-lg self-center space-x-2 group border-2 border-black rounded-full px-6 py-3 text-black transition-all duration-300 
+             hover:bg-blue-600 hover:text-white hover:scale-105"
+>
+  <span>Works</span>
+  <FaArrowDown className="animate-bounce text-black transition-transform duration-300 group-hover:translate-y-1 group-hover:text-white" />
+</a>
+
         </div>
       </main>
     </div>

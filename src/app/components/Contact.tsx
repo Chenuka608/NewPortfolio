@@ -2,10 +2,10 @@
 
 export default function Contact() {
   return (
-    <section id="contact" className=" max-w-4xl mx-auto px-6 py-12 bg-white text-gray-900">
+    <section id="contact" className=" max-w-4xl mx-auto px-6 py-12  ">
       <h2 className="text-4xl font-extrabold mb-8 text-center">Contact Me</h2>
 
-      <p className="text-lg text-gray-700 text-center mb-12">
+      <p className="text-lg  text-center mb-12">
         Have a project in mind or just want to say hi? Fill out the form below and I’ll get back to you as soon as possible.
       </p>
 
@@ -16,7 +16,7 @@ export default function Contact() {
       >
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-gray-800 font-medium mb-2">
+          <label htmlFor="name" className="block  font-medium mb-2">
             Name
           </label>
           <input
@@ -31,7 +31,7 @@ export default function Contact() {
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-gray-800 font-medium mb-2">
+          <label htmlFor="email" className="block font-medium mb-2">
             Email
           </label>
           <input
@@ -46,7 +46,7 @@ export default function Contact() {
 
         {/* Subject */}
         <div>
-          <label htmlFor="subject" className="block text-gray-800 font-medium mb-2">
+          <label htmlFor="subject" className="block  font-medium mb-2">
             Subject
           </label>
           <input
@@ -61,7 +61,7 @@ export default function Contact() {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-gray-800 font-medium mb-2">
+          <label htmlFor="message" className="block  font-medium mb-2">
             Message
           </label>
           <textarea
@@ -78,7 +78,7 @@ export default function Contact() {
         <div className="text-center">
           <button
             type="submit"
-            className="px-10 py-3 bg-black text-white font-semibold rounded-md shadow-lg hover:bg-gray-800 transform hover:scale-105 transition-all duration-300"
+            className="px-10 py-3 cursor-pointer text-white bg-black font-semibold rounded-md shadow-lg hover:bg-gray-800 transform hover:scale-105 transition-all duration-300"
           >
             Send Message
           </button>

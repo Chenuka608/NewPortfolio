@@ -13,7 +13,7 @@ export default function MoreAboutMe() {
   ];
 
   return (
-    <section id="about"className="max-w-4xl mx-auto px-6 py-12 bg-white text-gray-900">
+    <section id="about"className="max-w-4xl mx-auto px-6 py-12 text-gray-900">
       {/* Heading */}
       <h2 className="text-4xl font-extrabold mb-4">What I Offer</h2>
 

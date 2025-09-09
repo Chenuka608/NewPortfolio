@@ -59,8 +59,13 @@ const projects = [
 
 export default function ProjectGallery() {
   return (
-    <section id="works"className="max-w-6xl mx-auto px-6 py-12 bg-white text-gray-900">
-      <h2 className="text-4xl font-extrabold mb-12 text-center">My Projects</h2>
+    <section
+      id="works"
+      className="max-w-6xl mx-auto px-6 py-12 "
+    >
+      <h2 className="text-4xl font-extrabold mb-12 text-center">
+        My Projects
+      </h2>
 
       {projects.map((project, idx) => {
         const isEven = idx % 2 === 0;
@@ -82,14 +87,14 @@ export default function ProjectGallery() {
             </div>
 
             {/* Project Details */}
-            <div className="md:w-1/2 w-full md:px-12 mt-6 md:mt-0">
+            <div className="md:w-1/2 w-full md:px-12 mt-6 md:mt-0 text-center md:text-left">
               <h3 className="text-3xl font-semibold mb-4">{project.title}</h3>
               <p className="text-gray-700 mb-6">{project.description}</p>
               <a
                 href={project.link}
-                className="inline-block text-blue-600 font-medium hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-blue-500"
               >
                 View Project
               </a>
