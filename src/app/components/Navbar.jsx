@@ -7,6 +7,16 @@ import logo from "../images/logo3.png";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const scrollToSection = (id) => {
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleLinkClick = (id) => {
+    setMenuOpen(false);
+    setTimeout(() => scrollToSection(id), 200);
+  };
+
   return (
     <>
       {/* Navbar */}
@@ -17,7 +27,7 @@ export default function Navbar() {
           <span className="text-xl font-bold">Just Perfect.</span>
         </div>
 
-        {/* Hamburger Button - always visible */}
+        {/* Hamburger button - always visible */}
         <button
           className="z-50 flex flex-col justify-center items-center w-10 h-10 group"
           aria-label="Toggle menu"
@@ -41,7 +51,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Slide-in Menu (always mobile style) */}
+      {/* Slide-in Menu (always full-screen) */}
       <div
         className={`fixed top-0 right-0 h-full w-full bg-white z-40 transform transition-transform duration-300 ease-in-out ${
           menuOpen ? "translate-x-0" : "translate-x-full"
@@ -58,43 +68,11 @@ export default function Navbar() {
         </div>
 
         <nav className="flex flex-col items-center justify-center space-y-8 text-2xl font-semibold h-[calc(100%-64px)]">
-          <a
-            href="#hero"
-            className="hover:text-gray-700 transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            Home
-          </a>
-           <a
-            href="#edu"
-            className="hover:text-gray-700 transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            Experience and Education
-          </a>
-           <a
-            href="#about"
-            className="hover:text-gray-700 transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            About
-          </a>
-          <a
-            href="#works"
-            className="hover:text-gray-700 transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            Projects
-          </a>
-         
-          
-          <a
-            href="#contact"
-            className="hover:text-gray-700 transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            Contact
-          </a>
+          <button onClick={() => handleLinkClick("hero")}>Home</button>
+          <button onClick={() => handleLinkClick("edu")}>Experience</button>
+          <button onClick={() => handleLinkClick("about")}>About</button>
+          <button onClick={() => handleLinkClick("works")}>Projects</button>
+          <button onClick={() => handleLinkClick("contact")}>Contact</button>
         </nav>
       </div>
     </>
