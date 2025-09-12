@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FaArrowDown } from "react-icons/fa"; // react-icons arrow
+import { FaArrowDown } from "react-icons/fa";
 
 export default function Hero() {
-  const [flipped, setFlipped] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -39,47 +38,19 @@ export default function Hero() {
           {/* Get in touch button */}
           <a
             href="#contact"
-            onMouseEnter={() => setFlipped(true)}
-            onMouseLeave={() => setFlipped(false)}
-            className="relative w-52 h-12 rounded-full cursor-pointer"
-            style={{ perspective: "800px" }}
+            className="w-52 h-12 flex items-center justify-center rounded-full border-2 border-black bg-white text-black font-semibold transition-all duration-300 hover:bg-black hover:text-white hover:scale-105"
           >
-            <div
-              className="relative w-full h-full rounded-full flex items-center justify-center font-semibold transition-transform duration-500"
-              style={{
-                transformStyle: "preserve-3d",
-                transform: flipped ? "rotateX(180deg)" : "rotateX(0deg)",
-              }}
-            >
-              <span
-                className="absolute inset-0 rounded-full bg-black text-white flex items-center justify-center select-none"
-                style={{ backfaceVisibility: "hidden" }}
-              >
-                Get in touch
-              </span>
-
-              <span
-                className="absolute inset-0 rounded-full bg-white text-black border-2 border-black flex items-center justify-center select-none"
-                style={{
-                  backfaceVisibility: "hidden",
-                  transform: "rotateX(180deg)",
-                }}
-              >
-                Get in touch
-              </span>
-            </div>
+            Get in touch
           </a>
 
           {/* Works button */}
           <a
-  href="#works"
-  className="flex flex-row items-center font-medium cursor-pointer text-base sm:text-lg self-center space-x-2 group border-2 border-black rounded-full px-6 py-3 text-black transition-all duration-300 
-             hover:bg-blue-600 hover:text-white hover:scale-105"
->
-  <span>Works</span>
-  <FaArrowDown className="animate-bounce text-black transition-transform duration-300 group-hover:translate-y-1 group-hover:text-white" />
-</a>
-
+            href="#works"
+            className="flex flex-row items-center font-medium cursor-pointer text-base sm:text-lg self-center space-x-2 group border-2 border-black rounded-full px-6 py-3 text-black transition-all duration-300  hover:bg-black hover:text-white hover:scale-105"
+          >
+            <span>Works</span>
+            <FaArrowDown className="animate-bounce text-black transition-transform duration-300 group-hover:translate-y-1 group-hover:text-white" />
+          </a>
         </div>
       </main>
     </div>
