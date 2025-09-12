@@ -7,10 +7,22 @@ import logo from "../images/logo3.png";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleNavClick = (id) => {
+    setMenuOpen(false);
+    setTimeout(() => scrollToSection(id), 200);
+  };
+
   return (
     <>
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 bg-white">
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 bg-white shadow-md">
         {/* Logo */}
         <div className="flex items-center space-x-3">
           <Image src={logo} alt="Logo" width={48} height={48} priority />
@@ -19,7 +31,7 @@ export default function Navbar() {
 
         {/* Hamburger button */}
         <button
-          className="z-50 flex flex-col justify-center items-center w-10 h-10 group"
+          className="z-50 flex flex-col justify-center items-center w-10 h-10 group md:hidden"
           aria-label="Toggle menu"
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -39,13 +51,34 @@ export default function Navbar() {
             }`}
           />
         </button>
+
+        {/* Desktop menu */}
+        <div className="hidden md:flex space-x-6 text-lg font-semibold">
+          {["hero", "edu", "about", "works", "contact"].map((id) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className="hover:text-blue-500 transition-colors duration-200 cursor-pointer"
+            >
+              {id === "hero"
+                ? "Home"
+                : id === "edu"
+                ? "Experience"
+                : id === "about"
+                ? "About"
+                : id === "works"
+                ? "Projects"
+                : "Contact"}
+            </button>
+          ))}
+        </div>
       </nav>
 
-      {/* Slide-in Menu */}
+      {/* Mobile slide-in menu */}
       <div
         className={`fixed top-0 right-0 h-full w-full bg-white z-40 transform transition-transform duration-300 ease-in-out ${
           menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        } md:hidden`}
       >
         <div className="flex justify-end p-4">
           <button
@@ -58,41 +91,23 @@ export default function Navbar() {
         </div>
 
         <nav className="flex flex-col items-center justify-center space-y-8 text-2xl font-semibold h-[calc(100%-64px)]">
-          <a
-            href="#hero"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-500 transition-colors duration-200"
-          >
-            Home
-          </a>
-          <a
-            href="#edu"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-500 transition-colors duration-200"
-          >
-            Experience
-          </a>
-          <a
-            href="#about"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-500 transition-colors duration-200"
-          >
-            About
-          </a>
-          <a
-            href="#works"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-500 transition-colors duration-200"
-          >
-            Projects
-          </a>
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-500 transition-colors duration-200"
-          >
-            Contact
-          </a>
+          {["hero", "edu", "about", "works", "contact"].map((id) => (
+            <button
+              key={id}
+              onClick={() => handleNavClick(id)}
+              className="hover:text-blue-500 transition-colors duration-200 cursor-pointer "
+            >
+              {id === "hero"
+                ? "Home"
+                : id === "edu"
+                ? "Experience"
+                : id === "about"
+                ? "About"
+                : id === "works"
+                ? "Projects"
+                : "Contact"}
+            </button>
+          ))}
         </nav>
       </div>
     </>
