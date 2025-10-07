@@ -7,17 +7,7 @@ import logo from "../images/logo3.png";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  const handleNavClick = (id) => {
-    setMenuOpen(false);
-    setTimeout(() => scrollToSection(id), 200);
-  };
+  const handleNavClick = () => setMenuOpen(false);
 
   return (
     <>
@@ -54,23 +44,11 @@ export default function Navbar() {
 
         {/* Desktop menu */}
         <div className="hidden md:flex space-x-6 text-lg font-semibold">
-          {["hero", "edu", "about", "works", "contact"].map((id) => (
-            <button
-              key={id}
-              onClick={() => scrollToSection(id)}
-              className="hover:text-blue-500 transition-colors duration-200"
-            >
-              {id === "hero"
-                ? "Home"
-                : id === "edu"
-                ? "Experience"
-                : id === "about"
-                ? "About"
-                : id === "works"
-                ? "Projects"
-                : "Contact"}
-            </button>
-          ))}
+          <a href="#hero" className="hover:text-blue-500 transition-colors">Home</a>
+          <a href="#edu" className="hover:text-blue-500 transition-colors">Experience</a>
+          <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
+          <a href="#works" className="hover:text-blue-500 transition-colors">Projects</a>
+          <a href="#contact" className="hover:text-blue-500 transition-colors">Contact</a>
         </div>
       </nav>
 
@@ -91,23 +69,41 @@ export default function Navbar() {
         </div>
 
         <nav className="flex flex-col items-center justify-center space-y-8 text-2xl font-semibold h-[calc(100%-64px)]">
-          {["hero", "edu", "about", "works", "contact"].map((id) => (
-            <button
-              key={id}
-              onClick={() => handleNavClick(id)}
-              className="hover:text-blue-500 transition-colors duration-200 "
-            >
-              {id === "hero"
-                ? "Home"
-                : id === "edu"
-                ? "Experience"
-                : id === "about"
-                ? "About"
-                : id === "works"
-                ? "Projects"
-                : "Contact"}
-            </button>
-          ))}
+          <a
+            href="#hero"
+            onClick={handleNavClick}
+            className="hover:text-blue-500 transition-colors"
+          >
+            Home
+          </a>
+          <a
+            href="#edu"
+            onClick={handleNavClick}
+            className="hover:text-blue-500 transition-colors"
+          >
+            Experience
+          </a>
+          <a
+            href="#about"
+            onClick={handleNavClick}
+            className="hover:text-blue-500 transition-colors"
+          >
+            About
+          </a>
+          <a
+            href="#works"
+            onClick={handleNavClick}
+            className="hover:text-blue-500 transition-colors"
+          >
+            Projects
+          </a>
+          <a
+            href="#contact"
+            onClick={handleNavClick}
+            className="hover:text-blue-500 transition-colors"
+          >
+            Contact
+          </a>
         </nav>
       </div>
     </>

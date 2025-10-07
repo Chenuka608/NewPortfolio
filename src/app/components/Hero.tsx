@@ -12,21 +12,13 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToWorks = () => {
-    document.getElementById("works")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div
       id="hero"
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden transition-opacity duration-1000 ease-in-out"
       style={{ opacity: isVisible ? 1 : 0 }}
     >
-      {/* ✅ Background Image Layer */}
+      {/* Background Image */}
       <Image
         src="/images/bg.jpg"
         alt="Hero background"
@@ -36,7 +28,7 @@ export default function Hero() {
         style={{ objectFit: "cover" }}
       />
 
-      {/* ✅ Foreground Content */}
+      {/* Foreground Content */}
       <main className="relative z-10 w-full max-w-5xl mx-auto flex flex-col justify-center items-center px-6 py-12 text-gray-900 text-center backdrop-blur-[2px]">
         <header className="mb-10 sm:mb-12">
           <h1 className="text-5xl sm:text-7xl font-extrabold leading-tight mb-4 sm:mb-6 text-black">
@@ -52,21 +44,22 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="flex flex-row flex-wrap justify-center items-center gap-6 mt-6">
-          <button
-            onClick={scrollToContact}
+          <a
+            href="#contact"
             className="w-52 h-14 flex items-center justify-center rounded-full border-2 border-black bg-white text-black font-semibold transition-all duration-300 hover:bg-black hover:text-white hover:scale-105"
           >
             Get in touch
-          </button>
+          </a>
 
-          <button
-            onClick={scrollToWorks}
+          <a
+            href="#works"
             className="w-52 h-14 flex items-center justify-center font-medium rounded-full border-2 border-black bg-white text-black transition-all duration-300 hover:bg-black hover:text-white hover:scale-105"
           >
             <span className="flex items-center justify-center gap-2">
-              Works <FaArrowDown className="animate-bounce text-black group-hover:text-white transition-transform duration-300" />
+              Works{" "}
+              <FaArrowDown className="animate-bounce text-black group-hover:text-white transition-transform duration-300" />
             </span>
-          </button>
+          </a>
         </div>
       </main>
     </div>
