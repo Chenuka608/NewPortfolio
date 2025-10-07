@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Experience() {
   return (
     <section
       id="edu"
-      className="max-w-4xl mx-auto px-6 py-12  text-gray-900"
+      className="max-w-4xl mx-auto px-6 py-12 text-gray-900"
     >
       <h2 className="text-4xl font-extrabold mb-10 text-center sm:text-left">
         Experience & Education
@@ -12,11 +14,13 @@ export default function Experience() {
 
       {/* Current Role */}
       <div className="mb-10 flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
-        <img
+        <Image
           src="/images/fintrex.png"
           alt="Fintrex Finance PLC Logo"
+          width={96}
+          height={96}
           className="w-24 h-24 sm:w-16 sm:h-16 object-contain rounded-md shadow-md mx-auto sm:mx-0"
-          loading="lazy"
+          priority
         />
         <div className="text-center sm:text-left">
           <h3 className="text-2xl font-semibold mb-1">Software Developer Intern</h3>
@@ -34,17 +38,19 @@ export default function Experience() {
         {/* University */}
         <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
           <div className="flex space-x-4 justify-center sm:justify-start">
-            <img
+            <Image
               src="/images/uow.png"
               alt="University of Westminster Logo"
+              width={80}
+              height={80}
               className="w-20 h-20 sm:w-16 sm:h-16 object-contain rounded-md shadow-md"
-              loading="lazy"
             />
-            <img
+            <Image
               src="/images/iit.png"
               alt="Informatics Institute of Technology Logo"
+              width={80}
+              height={80}
               className="w-20 h-20 sm:w-16 sm:h-16 object-contain rounded-md shadow-md"
-              loading="lazy"
             />
           </div>
           <div className="text-center sm:text-left">
@@ -60,17 +66,19 @@ export default function Experience() {
         {/* Lyceum + Cambridge logos */}
         <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
           <div className="flex space-x-4 justify-center sm:justify-start">
-            <img
+            <Image
               src="/images/lyceum.png"
               alt="Lyceum International School Logo"
+              width={80}
+              height={80}
               className="w-20 h-20 sm:w-16 sm:h-16 object-contain rounded-md shadow-md flex-shrink-0"
-              loading="lazy"
             />
-            <img
+            <Image
               src="/images/cambridge.png"
               alt="Cambridge Exam Board Logo"
+              width={80}
+              height={80}
               className="w-20 h-20 sm:w-16 sm:h-16 object-contain rounded-md shadow-md flex-shrink-0"
-              loading="lazy"
             />
           </div>
           <div className="flex-1 min-w-[250px] text-center sm:text-left">

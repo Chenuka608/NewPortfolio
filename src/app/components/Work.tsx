@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function MoreAboutMe() {
   const services = [
     "Full Stack Development",
@@ -13,7 +15,7 @@ export default function MoreAboutMe() {
   ];
 
   return (
-    <section id="about"className="max-w-4xl mx-auto px-6 py-12 text-gray-900">
+    <section id="about" className="max-w-4xl mx-auto px-6 py-12 text-gray-900">
       {/* Heading */}
       <h2 className="text-4xl font-extrabold mb-4">What I Offer</h2>
 
@@ -54,18 +56,22 @@ export default function MoreAboutMe() {
             <strong>Other Qualifications:</strong> Wendy Whatmore Academy – Spoken English, Speech & Drama
           </li>
           <li>
-            <strong>Extracurricular Activities:</strong> Swimming at St Thomas's College, Mt Lavinia; IIT Chess; Esports – Valorant Player; Soul Sounds Academy Choir Member (Directed by Soundarie David Rodrigo)
+            <strong>Extracurricular Activities:</strong> Swimming at St Thomas&apos;s College, Mt Lavinia; IIT Chess; Esports – Valorant Player; Soul Sounds Academy Choir Member (Directed by Soundarie David Rodrigo)
           </li>
         </ul>
 
-        {/* Choir Image */}
-        <div className="mt-6">
-          <img
-            src="/images/choir.png"
-            alt="Soul Sounds Academy Choir"
-            className="w-full max-w-3xl mx-auto rounded-md shadow-lg object-contain"
-            loading="lazy"
-          />
+        {/* Choir Image (fixed + verified visible) */}
+        <div className="mt-6 flex justify-center">
+          <div className="relative w-full max-w-3xl aspect-[3/2]">
+            <Image
+              src="/images/choir.png"
+              alt="Soul Sounds Academy Choir"
+              fill
+              sizes="(max-width: 768px) 100vw, 800px"
+              className="rounded-md shadow-lg object-contain"
+              priority={false}
+            />
+          </div>
         </div>
       </div>
     </section>

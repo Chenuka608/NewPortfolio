@@ -58,7 +58,7 @@ export default function Navbar() {
             <button
               key={id}
               onClick={() => scrollToSection(id)}
-              className="hover:text-blue-500 transition-colors duration-200 cursor-pointer"
+              className="hover:text-blue-500 transition-colors duration-200"
             >
               {id === "hero"
                 ? "Home"
@@ -95,7 +95,7 @@ export default function Navbar() {
             <button
               key={id}
               onClick={() => handleNavClick(id)}
-              className="hover:text-blue-500 transition-colors duration-200 cursor-pointer "
+              className="hover:text-blue-500 transition-colors duration-200 "
             >
               {id === "hero"
                 ? "Home"
