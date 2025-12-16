@@ -16,7 +16,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center space-x-3">
           <Image src={logo} alt="Logo" width={48} height={48} priority />
-          <span className="text-xl font-bold">Just Perfect.</span>
+          
         </div>
 
         {/* Hamburger button */}
