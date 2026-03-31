@@ -570,7 +570,7 @@ export default function Home() {
             {/* CTA Button */}
             <div className="flex justify-center">
               <Link
-                href="mailto:chenuka478@gmail.com"
+                href="mailto:sarathchandrachenuka465@gmail.com"
                 className="px-8 sm:px-10 py-3 sm:py-4 bg-linear-to-r from-blue-600 to-blue-700 text-white font-700 rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:-translate-y-1 text-sm sm:text-base md:text-lg inline-block"
               >
                 Send Me an Email
@@ -629,10 +629,10 @@ export default function Home() {
               <h4 className="font-800 text-primary mb-4">Get in Touch</h4>
               <div className="space-y-3">
                 <a
-                  href="mailto:chenuka478@gmail.com"
+                  href="mailto:sarathchandrachenuka465@gmail.com"
                   className="block text-secondary hover:text-accent-1 transition-colors duration-300 text-sm font-600"
                 >
-                  chenuka478@gmail.com
+                  sarathchandrachenuka465@gmail.com
                 </a>
                 <div className="pt-2 border-t border-color">
                   <p className="text-xs text-secondary mb-3">Follow me</p>
